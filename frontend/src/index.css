@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* eSwasthya Medical Theme */
+    --background: 0 0% 100%;
+    --foreground: 185 96% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 185 96% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 185 96% 10%;
+
+    /* Primary - Light Teal #ddebec */
+    --primary: 186 27% 89%;
+    --primary-foreground: 185 96% 10%;
+
+    /* Secondary - Deep Teal #012f33 */
+    --secondary: 186 38% 30%;
+
+
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 186 20% 95%;
+    --muted-foreground: 185 30% 40%;
+
+    --accent: 186 35% 85%;
+    --accent-foreground: 185 96% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Medical accent colors */
+    --success: 152 69% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 186 20% 88%;
+    --input: 186 20% 88%;
+    --ring: 185 96% 10%;
+
+    --radius: 0.75rem;
+
+    /* Custom properties */
+    --gradient-hero: linear-gradient(135deg, hsl(186 27% 89%) 0%, hsl(186 35% 95%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(186 20% 98%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(185 96% 10%) 0%, hsl(185 80% 18%) 100%);
+    --shadow-card: 0 4px 24px -4px hsl(185 96% 10% / 0.08);
+    --shadow-button: 0 4px 14px -2px hsl(185 96% 10% / 0.25);
+    --shadow-hover: 0 8px 30px -4px hsl(185 96% 10% / 0.15);
+
+    /* Sidebar */
+    --sidebar-background: 186 27% 98.5%;
+
+    --sidebar-foreground: 185 96% 10%;
+    --sidebar-primary: 186 40% 35%;
+
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 186 27% 94%;
+
+    --sidebar-accent-foreground: 185 60% 20%;
+
+    --sidebar-border: 186 20% 90%;
+    --sidebar-ring: 185 96% 10%;
+  }
+
+  .dark {
+    --background: 185 96% 6%;
+    --foreground: 186 27% 95%;
+
+    --card: 185 80% 8%;
+    --card-foreground: 186 27% 95%;
+
+    --popover: 185 80% 8%;
+    --popover-foreground: 186 27% 95%;
+
+    --primary: 186 27% 89%;
+    --primary-foreground: 185 96% 10%;
+
+    --secondary: 185 60% 15%;
+    --secondary-foreground: 186 27% 95%;
+
+    --muted: 185 50% 12%;
+    --muted-foreground: 186 20% 65%;
+
+    --accent: 185 50% 15%;
+    --accent-foreground: 186 27% 95%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 185 50% 15%;
+    --input: 185 50% 15%;
+    --ring: 186 27% 89%;
+
+    --sidebar-background: 185 96% 6%;
+    --sidebar-foreground: 186 27% 95%;
+    --sidebar-primary: 186 27% 89%;
+    --sidebar-primary-foreground: 185 96% 10%;
+    --sidebar-accent: 185 50% 12%;
+    --sidebar-accent-foreground: 186 27% 95%;
+    --sidebar-border: 185 50% 15%;
+    --sidebar-ring: 186 27% 89%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: theme('fontFamily.sans');
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.sans');;
+  }
+}
+
+@layer components {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-button {
+    background: var(--gradient-button);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(185 96% 10%) 0%, hsl(185 70% 25%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
